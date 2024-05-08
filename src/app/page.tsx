@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function page() {
+export default function Home() {
   return (
     <div> MMS Dynamic Service Website Design Request </div>
   )
