@@ -20,15 +20,21 @@ export default function Navbar() {
   return (
     <nav className="w-full top-0 z-[99999] py-6 relative">
       <div className="max-w-[1400px] mx-auto flex justify-between items-center w-[91%]">
-        <Link href={"Home"}>
-            
-          <img
-            src="../../../public/logo 2.png"
-            alt="CloudGrid Logo"
-            className="h-12"
-          />
-          
+        <Link href={"#home"}>
+          <h1
+            className="text-3xl
+            text-yellow-500 font-bold "
+          >
+            CLOUDGRID
+          </h1>
         </Link>
+        <ul className="flex gap-10 max-mid:hidden text-black">
+          {navLinks.map((link) => (
+            <Link href={link.route} key={link.id}>
+              <li>{link.name}</li>
+            </Link>
+          ))}
+        </ul>
       </div>
     </nav>
   );
