@@ -48,13 +48,13 @@ export default function Navbar() {
   };
 
   return (
-    <header className="w-full mx-auto px-4 bg-white shadow fixed top-0 z-50 dark:bg-stone-900 dark:border-b dark:border-stone-600">
+    <header className="w-full mx-auto px-4 bg-blue-200 shadow fixed top-0 z-50 dark:bg-stone-900 dark:border-b dark:border-stone-600">
       <div className="justify-between md:items-center md:flex">
         <div>
           <div className="md:py-5 md:block">
             {/* Logo link */}
             <Link href="/">
-              <Image src="/logo.jpg" alt="Logo" width={150} height={50} />
+              <Image src="/logo 2.jpg" alt="Logo" width={150} height={50} />
             </Link>
           </div>
         </div>
