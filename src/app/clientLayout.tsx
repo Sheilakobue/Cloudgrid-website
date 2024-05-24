@@ -9,12 +9,13 @@ export default function ClientLayout({
   children: React.ReactNode 
 }) {
   
-  return (
-    <ThemeProvider enableSystem={true} attribute= "class">
-      <div>
-        <Navbar />
-        {children}
-      </div>
-    </ThemeProvider>
-  );
-}
+    return (
+      <ThemeProvider theme={{}} enableSystem={true} attribute="class">
+        <div>
+          <Navbar />
+          {children}
+        </div>
+      </ThemeProvider>
+    );
+  }
+
