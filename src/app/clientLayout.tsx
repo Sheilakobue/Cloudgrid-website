@@ -11,10 +11,12 @@ export default function ClientLayout({
   
     return (
       <ThemeProvider theme={{}} enableSystem={true} attribute="class">
+        <section className="relative w-full h-screen bg-blue-100">
         <div>
           <Navbar />
           {children}
         </div>
+        </section>
       </ThemeProvider>
     );
   }

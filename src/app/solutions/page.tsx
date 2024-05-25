@@ -1,6 +1,7 @@
 import React from 'react'
 
 export default function SolutionList() {
+  
   return (
     <>
     <h1>Our Solutions</h1>
