@@ -47,11 +47,11 @@ export default function Navbar() {
   };
 
   return (
-    <header className="w-full mx-auto px-4 bg-blue-200 shadow fixed top-0 z-50 sm:px-20 dark:bg-stone-900 dark:border-b dark:border-stone-600">
+    <header className="w-full mx-auto px-4 bg-white shadow fixed top-0 z-50 sm:px-20 dark:bg-stone-900 dark:border-b dark:border-stone-600">
       <div className="flex justify-between items-center py-3">
         {/* Logo link */}
         <Link href="/" className="flex items-center">
-          <Image src="/logo 2.jpg" alt="Logo" width={150} height={50} />
+          <Image src="/logo 2.jpg" alt="Logo" width={100} height={50} />
         </Link>
         {/* Mobile menu button */}
         <div className="md:hidden">
