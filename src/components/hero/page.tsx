@@ -14,29 +14,16 @@ export default function Hero() {
   };
 
   return (
-    <div className="w-full h-[350px] flex items-center overflow-hidden relative">
-      <div className="w-full h-full m-auto flex justify-center items-center relative">
-        <div className="w-full h-full relative">
-          <Image
-            src={heroImage}
-            alt="banner"
-            className="absolute top-0 left-0"
-          />
-          <div className="absolute inset-0 flex items-center justify-center text-center px-4">
-            <TypeAnimation
-              sequence={[
-                'Empowering businesses through cutting-edge technology solutions for streamlined operations and enhanced productivity',
-                1000,
-              ]}
-              wrapper="span"
-              speed={20}
-              className="text-blue-900 text-sm sm:text-lg"
-              repeat={Infinity}
-            />
-          </div>
-        </div>
-       
-        <div className="absolute mt-[130px]">
+    <div className="w-full h-[250px] md:h-[350px] lg:h-[450px] flex items-center overflow-hidden relative">
+  <div className="w-full h-full m-auto flex justify-center items-center relative">
+    <div className="w-full h-full relative">
+      <Image
+        src={heroImage}
+        alt="banner"
+        className="absolute top-0 left-0 w-full h-full object-cover"
+      />
+          <div className="absolute inset-0 flex flex-col items-center justify-end text-center px-4 pb-4">
+          <div className="mb-4">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -44,11 +31,23 @@ export default function Hero() {
           >
             <Image
               src={logo}
-              height={30}
-              width={200}
+              height={20}
+              width={100}
               alt="Logo"
             />
           </motion.div>
+        </div>
+            <TypeAnimation
+              sequence={[
+                'Empowering businesses through cutting-edge technology solutions for streamlined operations and enhanced productivity',
+                1000,
+              ]}
+              wrapper="span"
+              speed={20}
+              className="text-blue-900 text-sm sm:text-sm"
+              repeat={Infinity}
+            />
+          </div>
         </div>
       </div>
     </div>
