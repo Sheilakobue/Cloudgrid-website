@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import ClientLayout from "./clientLayout";
-import './globals.css';
+import { Providers } from "./providers";
+import Navbar from "../components/Navbar"
+import "./globals.css"
 
 // Define Poppins font configurations
 const poppins = Poppins({
@@ -12,14 +13,24 @@ const poppins = Poppins({
 // Define metadata for the page
 export const metadata: Metadata = {
   title: "CLOUDGRID",
-  description: "Empowering businesses through cutting-edge technology solutions for streamlined operations and enhanced productivity",
+  description:
+    "Empowering businesses through cutting-edge technology solutions for streamlined operations and enhanced productivity",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <ClientLayout>{children}</ClientLayout>
+      <section className="relative w-full h-screen bg-blue-100 dark:bg-stone-900">
+        <Providers>
+          <Navbar/>
+          {children}
+          </Providers>
+          </section>
       </body>
     </html>
   );
