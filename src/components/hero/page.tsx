@@ -14,13 +14,11 @@ export default function Hero() {
   };
 
   return (
-    <div className="w-full h-[310px] flex items-center overflow-hidden relative">
+    <div className="w-full h-[350px] flex items-center overflow-hidden relative">
       <div className="w-full h-full m-auto flex justify-center items-center relative">
         <div className="w-full h-full relative">
           <Image
             src={heroImage}
-            layout="fill"
-            objectFit="cover"
             alt="banner"
             className="absolute top-0 left-0"
           />
@@ -38,7 +36,7 @@ export default function Hero() {
           </div>
         </div>
        
-        <div className="absolute bottom-2">
+        <div className="absolute mt-[130px]">
           <motion.div
             initial="hidden"
             animate="visible"
