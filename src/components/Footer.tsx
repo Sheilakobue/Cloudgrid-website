@@ -4,7 +4,7 @@ import { FaHome, FaInfoCircle, FaCogs, FaEnvelope, FaMapMarkerAlt, FaMobileAlt, 
 export default function Footer() {
   return (
     
-    <footer className="bg-blue100 text-blue950 py-6 mr-1 md:mr-2 text-xs md:text-sm"> {/* Reduced py-10 to py-6 */}
+    <footer className="bg-blue50 text-blue950 py-6 mr-1 md:mr-2 text-xs md:text-sm"> {/* Reduced py-10 to py-6 */}
       <div className="container mx-auto px-4">
       <hr className= "boder-t border-sky-300 mb-6" />
         <div className="flex flex-wrap justify-between items-top"> 

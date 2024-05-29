@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
-      <section className="relative w-full h-screen bg-blue-100 dark:bg-stone-900">
+      <section className="relative w-full h-screen bg-blue50 dark:bg-stone-900">
         <Providers>
           <Navbar/>
          
