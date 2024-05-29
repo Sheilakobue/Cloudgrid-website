@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import { Providers } from "./providers";
 import Navbar from "../components/Navbar";
+import Footer from "@/components/Footer";
 import './styles/globals.css';
 // Define Poppins font configurations
 const poppins = Poppins({
@@ -27,8 +28,10 @@ export default function RootLayout({
       <section className="relative w-full h-screen bg-blue-100 dark:bg-stone-900">
         <Providers>
           <Navbar/>
+         
           {children}
           </Providers>
+          <Footer/>
           </section>
       </body>
     </html>

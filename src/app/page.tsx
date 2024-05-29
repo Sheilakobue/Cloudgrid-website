@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div>
       <Hero />
-      <h3>Home Page</h3>
+      <h3>Who We Are</h3>
       <p>Coming soon </p>
     </div>
   );
