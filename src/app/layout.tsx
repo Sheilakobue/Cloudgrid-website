@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Poppins,Roboto} from "next/font/google";
 import { Providers } from "./providers";
 import Navbar from "../components/Navbar";
 import Footer from "@/components/Footer";
 import './styles/globals.css';
-// Define Poppins font configurations
-const poppins = Poppins({
+
+const roboto = Roboto({
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+  weight: ["100", "300", "400", "500", "700", "900"],
 });
 
 // Define metadata for the page
@@ -24,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={poppins.className}>
+      <body className={roboto.className}>
       <section className="relative w-full h-screen bg-blue50 dark:bg-stone-900">
         <Providers>
           <Navbar/>

@@ -29,6 +29,10 @@ module.exports = {
         sky300: '#7dd3fc',
         sky400: '#38bdf8',
       },
+      fontFamily: {
+        'roboto': ['Roboto', 'sans-serif'],
+        'playfair': ['Playfair Display', 'serif'],
+      },
     },
   },
   plugins: [],
