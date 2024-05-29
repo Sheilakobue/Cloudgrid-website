@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import { Providers } from "./providers";
-import Navbar from "../components/Navbar"
-import "./globals.css"
-
+import Navbar from "../components/Navbar";
+import './styles/globals.css';
 // Define Poppins font configurations
 const poppins = Poppins({
   subsets: ["latin"],
