@@ -19,12 +19,13 @@ export default function Hero() {
   return (
     <div className="w-full h-[250px] md:h-[350px] lg:h-[450px] flex items-center overflow-hidden relative">
       <div className="w-full h-full m-auto flex justify-center items-center relative">
-        <div className="w-full h-full relative">
+        <div className="w-full h-full relative ">
           <Image
             src={heroImage}
             alt="banner"
             className="absolute top-0 left-0 w-full h-full object-cover"
           />
+          <div className="absolute top-0 left-0 w-full h-full bg-blue950 bg-opacity-50"></div>
           <div className="absolute inset-0 flex flex-col items-center justify-end text-center px-4 pb-4">
             <div className="mb-4">
               <motion.div
@@ -42,7 +43,7 @@ export default function Hero() {
               ]}
               wrapper="span"
               speed={20}
-              className="text-blue-900 text-sm sm:text-sm"
+              className="text-white text-sm sm:text-sm"
               repeat={Infinity}
             />
           </div>
