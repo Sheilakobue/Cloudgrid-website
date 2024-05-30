@@ -1,3 +1,4 @@
+import React from "react";
 import Link from "next/link";
 import {
   FaHome,
@@ -5,117 +6,82 @@ import {
   FaCogs,
   FaEnvelope,
   FaMapMarkerAlt,
-  FaMobileAlt,
   FaWhatsapp,
   FaPhone,
 } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-blue50 w-full shadow text-blue950 py-2 mr-1 md:mr-1 text-xs md:text-sm dark:bg-stone-700 dark:border-b dark:border-stone-400 ">
-      
-      <div className="container mx-auto px-4 dark:text-neutral-100">
-        <hr className="boder-t border-sky-300 mb-6" />
-        <div className="flex flex-wrap justify-between items-top">
-          {/* Quick Links */}
-          <div className="w-full md:w-auto mb-2 md:mb-0 ">
-           
-            <ul className="text-blue950 text-xs md:text-sm flex flex-wrap items-center dark:text-neutral-100">
-             
-              <li className="mr-4 mb-2">
-               
-                <Link
-                  href="/"
-                  className="hover:text-amber-500 flex items-center"
-                >
-                  <FaHome className="mr-1 md:mr-2 text-xs md:text-sm" />{" "}
-                  <span className="hidden md:inline">Home</span>{" "}
-                
+    <div className="bg-blue50 w-full flex flex-col justify-around items-start p-2">
+      <div className="container mx-auto px-2 dark:text-neutral-100">
+        <hr className="border-t border-sky-300 mb-0" />
+
+        <div className="flex flex-col md:flex-row justify-between mb-0">
+          <div className="p-2 w-full md:w-1/2">
+            <h4 className="text-blue950 font-bold text-sm pb-2">
+              Quick<span className="text-amber500">Links</span>
+            </h4>
+            <ul className="flex flex-wrap gap-2 pb-1">
+              <li>
+                <Link href="/">
+                  <FaHome className="text-xs text-blue950 cursor-pointer hover:text-amber500" />
                 </Link>
               </li>
-              <li className="mr-4 mb-2">
-               
-                <Link
-                  href="/about"
-                  className="hover:text-amber-500 flex items-center"
-                >
-                  <FaInfoCircle className="mr-1 md:mr-2 text-xs md:text-sm" />{" "}
-                  <span className="hidden md:inline">About Us</span>{" "}
-          
+              <li>
+                <Link href="/about">
+                  <FaInfoCircle className="text-xs text-blue950 cursor-pointer hover:text-amber500" />
                 </Link>
               </li>
-              <li className="mr-4 mb-2">
-                
-                <Link
-                  href="/solutions"
-                  className="hover:text-amber-500 flex items-center"
-                >
-                  <FaCogs className="mr-1 md:mr-2 text-xs md:text-sm" />{" "}
-                  <span className="hidden md:inline">Solutions</span>{" "}
-                 
+              <li>
+                <Link href="/solutions">
+                  <FaCogs className="text-xs text-blue950 cursor-pointer hover:text-amber500" />
                 </Link>
               </li>
-              <li className="mb-2">
-              
-                <Link
-                  href="/contact"
-                  className="hover:text-amber-500 flex items-center"
-                >
-                  <FaEnvelope className="mr-1 md:mr-2 text-xs md:text-sm" />{" "}
-                  <span className="hidden md:inline">Contact</span>{" "}
-                 
+              <li>
+                <Link href="/contact">
+                  <FaEnvelope className="text-xs text-blue950 cursor-pointer hover:text-amber500" />
                 </Link>
               </li>
             </ul>
           </div>
+        </div>
 
-          {/* Contact Info */}
-          <div className="w-full md:w-1/4">
-            <h2 className="text-amber-500 text-s font-bold mb-2">
-              We are here
-            </h2>
-            <div className="flex items-center mb-1">
-              
-              <FaMapMarkerAlt className="mr-2" />
-              <p className="text-blue950 text-xs md:text-xs  dark:text-neutral-100">
-                2 Foreman Road, Spartan ext 3, Kempton Park, South Africa
-              </p>
-            </div>
-            <div className="flex items-center mb-1">
-              
-              <FaEnvelope className="mr-2" />
-              <p className="text-blue950 text-xs md:text-xs  dark:text-neutral-100">
+        <div className="p-0 w-full md:w-1/2">
+            <h4 className="text-amber500 text-s pb-1 md:text-xs dark:text-neutral-100">Contacts</h4>
+            <ul>
+              <li className="text-blue950 text-md pb-1 text-xs md:inline md:text-xs dark:text-neutral-100 flex items-center">
+                <FaEnvelope className="mr-2" />
                 support@cloudgrid.co.za
-              </p>
-            </div>
-            <div className="flex items-center mb-1">
-              
-              <FaPhone className="mr-2" />
-              <p className="text-blue950 text-xs md:text-xs  dark:text-neutral-100">
+              </li>
+              <li className="text-blue950 text-md pb-1 text-xs md:inline md:text-xs dark:text-neutral-100 flex items-center">
+                <FaPhone className="mr-2" />
                 (011) 392 8744
-              </p>
-            </div>
-            <div className="flex items-center mb-1">
-              
-              <FaMobileAlt className="mr-2" />
-              <p className="text-blue950 text-xs md:text-xs  dark:text-neutral-100">
-                (+27)82 445 2706
-              </p>
-            </div>
-            <div className="flex items-center mb-1">
-              
-              <FaWhatsapp className="mr-2" />
-              <p className="text-blue950 text-xs md:text-xs  dark:text-neutral-100">
+              </li>
+              <li className="text-blue950 text-md pb-1 text-xs md:inline md:text-xs dark:text-neutral-100 flex items-center">
+                <FaWhatsapp className="mr-2" />
                 (+27)83 216 7285
-              </p>
-            </div>
+              </li>
+            </ul>
           </div>
         </div>
-        <div className="mt-2 text-center text-sky-300 text-xs md:text-base">
-          
-          &copy; {new Date().getFullYear()} IT Company. All rights reserved.
-        </div>
+
+        <div className="flex flex-col md:flex-row justify-between mt-0">
+          <div className="p-0 w-full md:w-1/2">
+            <h4 className="text-amber500 text-s pb-2 md:text-xs dark:text-neutral-100">We are here</h4>
+            <ul>
+              <li className="text-blue950 text-md pb-0 text-xs flex items-center">
+                <FaMapMarkerAlt className="mr-2" />
+                2 Foreman Road, Spartan ext 3
+              </li>
+              <li className="text-blue950 text-md pb-0 text-xs">Kempton Park</li>
+              <li className="text-blue950 text-md pb-0 text-xs">South Africa</li>
+            </ul>
+          </div>
+
       </div>
-    </footer>
+      <div className="mt-2 text-center text-sky-300 text-xs md:text-base w-full">
+          &copy; {new Date().getFullYear()} CLOUDGRID. All rights reserved.
+        </div>
+    </div>
   );
 }
