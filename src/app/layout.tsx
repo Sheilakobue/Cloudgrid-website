@@ -24,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className='roboto.className bg-blue50 dark:bg-stone-700 dark:border-b dark:border-stone-400' >
+      <body className='roboto.className bg-blue50  text-neutral-800 dark:border-b dark:border-stone-400' >
       <section className="relative w-full h-screen ">
         <Providers>
           <Navbar/>

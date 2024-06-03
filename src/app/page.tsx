@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div>
       <Hero />
-      <div className=' dark:text-neutral-100 text-blue950 '>
+      <div className=' dark:text-neutral-100 text-blue950  dark:bg-gray-800  '>
       <h3>Who We Are</h3>
       <p className="text-xs">Coming soon </p>
       <Link href="/solutions">
