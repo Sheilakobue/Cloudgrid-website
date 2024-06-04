@@ -30,7 +30,7 @@ export default function Navbar() {
               <Image src="/logo 2.jpg" alt="Logo" width={100} height={50} />
             </Link>
           </div>
-          <div className="md:hidden text-blue950 hover:text-yellow-500">
+          <div className="md:hidden text-blue950 hover:text-amber500 dark:text-neutral-100">
             <button onClick={() => setNavbar(!navbar)}>
               {navbar ? <IoMdClose size={25} /> : <IoMdMenu size={25} />}
             </button>
@@ -48,7 +48,7 @@ export default function Navbar() {
                 <Link
                   key={idx}
                   href={item.page}
-                  className="block text-blue-900 hover:text-yellow-500 dark:text-neutral-100"
+                  className="block text-blue-900 hover:text-amber500 dark:text-neutral-100"
                   onClick={() => setNavbar(false)}
                 >
                   {item.label}
