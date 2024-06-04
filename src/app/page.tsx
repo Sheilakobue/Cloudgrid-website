@@ -29,17 +29,17 @@ export default function Home() {
               alt="solutions"
               width={100}
               height={100}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover cursor-pointer"
             />
-            <span className="absolute top-0 left-0 w-full h-full flex items-center justify-center text-white font-bold text-xs">
+            <span className="absolute top-0 left-0 w-full h-full flex items-center justify-center text-white font-bold text-x  hover:text-amber500">
               solutions
             </span>
           </a>
         </div>
          {/* Arrow.section */}
-        <div  className="flex flex-row justify-center md:mt-8 mt-6">
+        <div  className="flex flex-row justify-center md:mt-8 mt-6 cursor-pointer hover:text-amber500 ">
           <Link href="/about" passHref>
-            <HiArrowCircleDown size={35} />
+            <HiArrowCircleDown size={35}  className="animate-bounce"/>
           </Link>
         </div>
       </div>
