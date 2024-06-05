@@ -22,10 +22,10 @@ export default function Navbar() {
   const [navbar, setNavbar] = useState(false);
 
   return (
-    <header className="w-full mx-auto px-4  bg-blue50 shadow  top-0 z-50 sm:px-20 dark:bg-gray-800  dark:border-b dark:border-stone-400">
+    <header className="w-full mx-auto px-4 bg-blue950 bg-opacity-50 shadow  top-0 z-50 sm:px-20 dark:bg-gray-800  dark:border-b dark:border-stone-400">
       <div className="justify-between md:items-center md:flex">
         <div>
-          <div className="flex items-center justify-between py-3">
+          <div className="flex items-center justify-between py-3 ">
             <div className="md:py-5 md:block">
               <Link href="/" className="flex items-center">
                 <Image src="/logo 2.jpg" alt="Logo" width={100} height={50} />

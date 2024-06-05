@@ -12,7 +12,7 @@ import {
 
 export default function Footer() {
   return (
-    <div className="bg-blue50 dark:bg-gray-800 w-full flex flex-col justify-around items-start p-2 ">
+    <div className=" bg-blue950 bg-opacity-50 dark:bg-gray-800 w-full flex flex-col justify-around items-start p-2 ">
       <div className="container mx-auto px-2 text-neutral-800 dark:text-neutral-100">
         <hr className="border-t border-sky-300 dark:border-gray-600 mb-0" />
 
