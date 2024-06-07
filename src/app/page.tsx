@@ -20,15 +20,15 @@ export default function Home() {
             providing and supporting office software solutions ideal for small
             and medium-sized enterprises.
           </p>
-          {/* Arrow.section */}
-          <div  className="flex flex-row justify-center md:mt-8 mt-2 cursor-pointer hover:text-amber500 ">
-          <Link href="/about" passHref>
-            <HiArrowCircleDown size={35}  className="animate-bounce"/>
-          </Link>
+
+          {/* Arrow section */}
+          <div className="flex flex-row justify-center md:mt-8 mt-2 cursor-pointer hover:text-amber-500">
+            <Link href="/about" passHref>
+              <HiArrowCircleDown size={35} className="animate-bounce" />
+            </Link>
+          </div>
         </div>
-        </div>
-          
-        {/* Image Button section */}
+              {/* Image Button section */}
         <div className="md:mt-0 pb-10 mt-4 md:w-1/2 relative flex items-center justify-center">
           <a href="/solutions" className="relative">
             <Image
@@ -43,6 +43,7 @@ export default function Home() {
             </span>
           </a>
         </div>
+    
         </div>
       </div>
     

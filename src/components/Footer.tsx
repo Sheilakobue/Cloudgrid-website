@@ -13,7 +13,6 @@ import {
 export default function Footer() {
   return (
     <footer className="mx-auto max-w-3xl px-4 sm:px-6 md:max-w-5xl bg-blue950 border-0 bg-opacity-50 dark:bg-gray-800">
-      <hr className="w-full h-0.5 mx-auto mt-4 border-0 border-sky-300 dark:border-gray-600 mb-0"></hr>
       <div className="mx-auto p-0 flex-col md:flex-row md:justify-between text-blue950 dark:text-gray-100 ">
         <div className="flex flex-row items-center space-x-2 mb-1 ">
           <h4 className="text-blue950 dark:text-gray-100 font-bold text-xs ">
