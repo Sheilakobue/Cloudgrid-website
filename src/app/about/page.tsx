@@ -2,13 +2,13 @@ import React from "react";
 
 export default function About() {
   return (
-    <section className="relative w-full h-screen dark:text-neutral-100 dark:bg-gray-800">
-      <div className="my-4 pb-12 md:pt-16 md:pb-48">
+    <section className=" dark:text-neutral-100 dark:bg-gray-800">
+      <div className="my-5 pb-5 md:pt-6 md:pb-30">
         <h1 className="text-center text-4xl font-bold mb-4 text-amber500">
           About Us
         </h1>
-        <div className="flex flex-col md:flex-row space-y-10 items-stretch justify-center align-top md: text-left md:p-4  md:space-y-0 md:space-x-10"></div>
-        <div className="text-xs mb-4 md:w-1/2">
+        <div className="flex flex-col space-y-5 items-stretch justify-center align-top md:flex-row md:text-left md:p-4 p-4 md:space-y-0 md:space-x-10">
+        <div className=" md:w-1/2 text-xs">
           <p>
             We are a proudly South African company, committed to empowering
             local businesses and driving economic progress. Our mission is to
@@ -17,7 +17,7 @@ export default function About() {
             landscape.
           </p>
           </div>
-          <div className="text-xs mb-4 md:w-1/2">
+          <div className="md:w-1/2 text-xs ">
           <p>
             At CloudGrid, we prioritize your business needs, offering flexible
             support options, including onsite and remote assistance. We ensure
@@ -27,6 +27,7 @@ export default function About() {
             optimal system performance. With a proven track record, we're a
             trusted partner dedicated to helping your business thrive.
           </p>
+          </div>
           </div>
       </div>
     </section>
