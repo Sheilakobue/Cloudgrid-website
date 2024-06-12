@@ -10,7 +10,7 @@ export default async function ContactAPI(req, res) {
     const transporter = nodemailer.createTransport({
         host: "smtp.mmsdynamic.co.za",
         port: 587,
-        secure: false, // Use `true` for port 465, `false` for all other ports
+        secure: false, 
         auth: {
           user: "admin@mmsdynamic.co.za",
           pass: "1707@Kobue!",
