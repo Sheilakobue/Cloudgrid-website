@@ -2,8 +2,7 @@ import React from "react";
 
 export default function About() {
   return (
-    <section className=" dark:text-neutral-100 dark:bg-gray-800">
-       
+    <section className=" dark:text-neutral-100 dark:bg-gray-800">   
       <div className="my-5 pb-5 md:pt-2 md:pb-0">
         <h1 className="text-center text-4xl font-bold mb-4 text-amber500">
           About Us
