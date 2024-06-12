@@ -9,7 +9,7 @@ export default function ContactUs() {
       style={{ backgroundImage: `url(${bgContact.src})` }}
     >
       <div className="text-center w-full max-w-screen-lg mx-auto p-4">
-        <h1 className="text-4xl font-bold mb-0 text-amber-500">Contacts</h1>
+        <h1 className="text-4xl font-bold mb-0 text-amber-500">Contacts Us</h1>
         <hr className="w-6 h-1 mx-auto my-4 bg-sky-300 border-0 rounded" />
         <h2 className="text-2xl font-bold mb-8 text-sky-300 dark:text-sky-300">
           Let's Chat.
