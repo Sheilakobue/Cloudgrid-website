@@ -1,127 +1,175 @@
 "use client";
-import React, { useState } from 'react';
+
+import React, { useState } from "react";
+import {
+  Button,
+  Container,
+  FormControl,
+  FormErrorMessage,
+  FormLabel,
+  Input,
+  Textarea,
+  useToast,
+  Text, // Make sure to import Text here
+} from "@chakra-ui/react";
+import { sendContactForm } from "../../../lib/api"; // Ensure this path is correct
+
+const initValues = {
+  fullName: "",
+  companyName: "",
+  email: "",
+  phone: "",
+  message: "",
+};
+
+const initState = { values: initValues, isLoading: false, error: "" };
 
 export default function ContactForm() {
-  const [loading, setLoading] = useState(false);
+  const toast = useToast();
+  const [state, setState] = useState(initState);
+  const [touched, setTouched] = useState({});
 
-  async function handleSubmit(event) {
-    event.preventDefault();
-    setLoading(true);
+  const { values, isLoading, error } = state;
 
-    const data = {
-      fullName: event.target.fullName.value,
-      companyName: event.target.companyName.value,
-      email: event.target.email.value,
-      phone: event.target.phone.value,
-      message: event.target.message.value,
-    };
+  const onBlur = ({ target }) =>
+    setTouched((prev) => ({ ...prev, [target.name]: true }));
 
+  const handleChange = ({ target }) =>
+    setState((prev) => ({
+      ...prev,
+      values: {
+        ...prev.values,
+        [target.name]: target.value,
+      },
+    }));
+
+  const onSubmit = async () => {
+    setState((prev) => ({
+      ...prev,
+      isLoading: true,
+    }));
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
+      await sendContactForm(values);
+      setTouched({});
+      setState(initState);
+      toast({
+        title: "Message sent.",
+        status: "success",
+        duration: 2000,
+        position: "top",
       });
-
-      if (response.ok) {
-        alert("Message sent successfully!");
-        console.log("Message sent successfully");
-        event.target.reset();  // Reset the form
-      } else {
-        console.log("Error sending message");
-        alert("Error sending message");
-      }
     } catch (error) {
-      console.error("Error:", error);
-      alert("An error occurred while sending the message");
-    } finally {
-      setLoading(false);
+      setState((prev) => ({
+        ...prev,
+        isLoading: false,
+        error: error.message,
+      }));
+      toast({
+        title: "Failed to send message.",
+        description: error.message,
+        status: "error",
+        duration: 2000,
+        position: "top",
+      });
     }
-  }
+  };
 
   return (
-    <form onSubmit={handleSubmit}>
-      {/* Full Name Input */}
-      <div className="w-full flex flex-col my-4">
-        <label htmlFor="fullName">Full Names</label>
-        <input
-          className="p-0 text-black bg-blue-200 border border-blue-400"
+    <Container maxW="450px" mt={12}>
+      <FormControl isRequired isInvalid={touched.fullName && !values.fullName} mb={10}>
+        <FormLabel>Full Name</FormLabel>
+        <Input
           type="text"
-          minLength={3}
-          maxLength={150}
-          required
-          autoComplete="off"
-          id="fullName"
           name="fullName"
-        />
-      </div>
-
-      {/* Company Name Input */}
-      <div className="w-full flex flex-col my-4">
-        <label htmlFor="companyName">Company Name <span className="text-xs">(required)</span></label>
-        <input
-          className="p-0 text-black bg-blue-200 border border-blue-400"
-          type="text"
-          minLength={3}
-          maxLength={150}
-          required
-          id="companyName"
-          name="companyName"
-        />
-      </div>
-
-      {/* Email Input */}
-      <div className="w-full flex flex-col my-4">
-        <label htmlFor="email">Email</label>
-        <input
-          className="p-0 text-black bg-blue-200 border border-blue-400"
-          type="email"
           minLength={5}
           maxLength={150}
-          required
-          id="email"
-          name="email"
+          errorBorderColor="red.300"
+          value={values.fullName}
+          onChange={handleChange}
+          onBlur={onBlur}
         />
-      </div>
+        <FormErrorMessage>Required</FormErrorMessage>
+      </FormControl>
 
-      {/* Phone Input */}
-      <div className="w-full flex flex-col my-4">
-        <label htmlFor="phone">Phone</label>
-        <input
-          className="p-0 text-black bg-blue-200 border border-blue-400"
+      <FormControl isRequired isInvalid={touched.companyName && !values.companyName} mb={10}>
+        <FormLabel>Company Name</FormLabel>
+        <Input
+          type="text"
+          minLength={5}
+          maxLength={150}
+          name="companyName"
+          errorBorderColor="red.300"
+          value={values.companyName}
+          onChange={handleChange}
+          onBlur={onBlur}
+        />
+        <FormErrorMessage>Required</FormErrorMessage>
+      </FormControl>
+
+      <FormControl isRequired isInvalid={touched.email && !values.email} mb={10}>
+        <FormLabel>Email</FormLabel>
+        <Input
+          type="email"
+          name="email"
+          minLength={5}
+          maxLength={150}
+          value={values.email}
+          errorBorderColor="red.300"
+          onChange={handleChange}
+          onBlur={onBlur}
+        />
+        <FormErrorMessage>Required</FormErrorMessage>
+      </FormControl>
+
+      <FormControl isRequired isInvalid={touched.phone && !values.phone} mb={10}>
+        <FormLabel>Phone</FormLabel>
+        <Input
           type="tel"
-          required
+          name="phone"
+          value={values.phone}
+          errorBorderColor="red.300"
+          onChange={handleChange}
+          onBlur={onBlur}
+        />
+        <FormErrorMessage>Required</FormErrorMessage>
+      </FormControl>
+
+      <FormControl isRequired isInvalid={touched.message && !values.message} mb={10}>
+        <FormLabel>Message</FormLabel>
+        <Textarea
+          name="message"
           minLength={10}
           maxLength={500}
-          id="phone"
-          name="phone"
-        />
-      </div>
-
-      {/* Message Textarea */}
-      <div className="w-full flex flex-col my-4">
-        <label htmlFor="message">How Can We Help?</label>
-        <textarea
           rows={4}
-          required
-          minLength={5}
-          maxLength={500}
-          id="message"
-          name="message"
-          className="w-full p-2 text-black bg-blue-200 border border-blue-400"
+          value={values.message}
+          errorBorderColor="red.300"
+          onChange={handleChange}
+          onBlur={onBlur}
         />
-      </div>
+        <FormErrorMessage>Required</FormErrorMessage>
+      </FormControl>
 
-      {/* Submit Button */}
-      <button
-        type="submit"
-        disabled={loading}
-        className="px-2 py-2 w-30 bg-amber-500 text-xs text-blue-200 mt-2 rounded-xl"
+      {error && (
+        <Text color="red.500" mb={4}>
+          {error}
+        </Text>
+      )}
+
+      <Button
+        variant="outline"
+        colorScheme="blue"
+        isLoading={isLoading}
+        disabled={
+          !values.fullName ||
+          !values.companyName ||
+          !values.email ||
+          !values.phone ||
+          !values.message
+        }
+        onClick={onSubmit}
       >
-        {loading ? "Sending..." : "Send Message"}
-      </button>
-    </form>
+        Submit
+      </Button>
+    </Container>
   );
 }

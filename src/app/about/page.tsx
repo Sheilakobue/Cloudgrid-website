@@ -1,4 +1,6 @@
 import React from "react";
+import aboutPicture from "../../../public/aboutPicture.png";
+import Image from "next/image";
 
 /**
  * About component
@@ -13,11 +15,11 @@ export default function About(): JSX.Element {
           About Us
           <hr className="w-6 h-1 mx-auto m-4 bg-sky-300 border-0 rounded" />
         </h1>
-        <div className="flex flex-col space-y-5 items-stretch justify-center align-top md:flex-row md:text-left md:p-4 p-4 md:space-y-0 md:space-x-10">
+        <div className="flex flex-col space-y-5 md:text-base text-xs text-blue-950 dark:text-neutral-100 items-stretch justify-center align-top md:flex-row md:text-left md:p-4 p-4 md:space-y-0 md:space-x-10">
           
           {/* First Text Section */}
-          <div className="md:w-1/2 text-xs">
-            <p>
+          <div className="md:w-1/2">
+            <p className="md:text-base text-xs">
               We are a proudly South African company, committed to empowering
               local businesses and driving economic progress. Our mission is to
               provide cutting-edge IT solutions, support, and services that help
@@ -27,8 +29,8 @@ export default function About(): JSX.Element {
           </div>
           
           {/* Second Text Section */}
-          <div className="md:w-1/2 text-xs">
-            <p>
+          <div className="md:w-1/2">
+            <p className="md:text-base text-xs">
               At CloudGrid, we prioritize your business needs, offering flexible
               support options, including onsite and remote assistance. We ensure
               transparency and affordability, providing competitive pricing,
@@ -37,8 +39,17 @@ export default function About(): JSX.Element {
               optimal system performance. With a proven track record, we're a
               trusted partner dedicated to helping your business thrive.
             </p>
-          </div>
-          
+          </div>   
+        </div>
+        
+        {/* About Picture section */}
+        <div className="md:mt-4 p-8">
+          <Image
+            src={aboutPicture}
+            alt="about"
+            width={1000}
+            height={600}
+          />
         </div>
       </div>
     </section>

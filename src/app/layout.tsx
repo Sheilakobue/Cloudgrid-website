@@ -30,7 +30,7 @@ export default function RootLayout({
 }): JSX.Element {
   return (
     <html lang="en">
-      <body className={`${roboto.className} bg-blue-950 border-0 bg-opacity-50 text-neutral-800 dark:border-b dark:border-stone-400`}>
+      <body className={`${roboto.className} bg-blue-100 border-0 text-neutral-800 dark:border-b dark:border-stone-400`}>
         <section className="relative w-full h-screen">
           <Providers>
             <Navbar />

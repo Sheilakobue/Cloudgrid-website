@@ -12,7 +12,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="mx-auto max-w-3xl px-4 sm:px-6 md:max-w-5xl bg-blue950 border-0 bg-opacity-50 dark:bg-gray-800">
+    <footer className="mx-auto max-w-3xl px-4 sm:px-6 md:max-w-5xl bg-blue-100 dark:bg-gray-800">
       <hr className="w-6 h-1 mx-auto m-4 bg-sky-300 border-0 rounded" />
       <div className="mx-auto p-0 flex-col md:flex-row md:justify-between text-blue950 dark:text-gray-100 ">
         <div className="flex flex-row items-center space-x-2 mb-1 ">
@@ -56,23 +56,21 @@ export default function Footer() {
           </ul>
         </div>
       
-          <div className="md:w-1/2 md:text-right">
-            <h4 className="text-amber500 text-s pb-2 md:text-xs dark:text-neutral-100">
+        <div className="md:w-1/2 md:text-right">
+          <h4 className="text-amber500 text-s pb-2 md:text-xs dark:text-neutral-100">
             <FaMapMarkerAlt className="mr-2 " />
-              We are here</h4>
-            <ul>
-              <li className="text-blue950 dark:text-gray-100 text-md pb-0 text-xs">2 Foreman Road, Spartan ext 3</li>
-              <li className="text-blue950 dark:text-gray-100 text-md pb-0 text-xs">Kempton Park</li>
-              <li className="text-blue950 dark:text-gray-100 text-md pb-0 text-xs">South Africa</li>
-            </ul>
-          </div>
-      
+            We are here</h4>
+          <ul>
+            <li className="text-blue950 dark:text-gray-100 text-md pb-0 text-xs">2 Foreman Road, Spartan ext 3</li>
+            <li className="text-blue950 dark:text-gray-100 text-md pb-0 text-xs">Kempton Park</li>
+            <li className="text-blue950 dark:text-gray-100 text-md pb-0 text-xs">South Africa</li>
+          </ul>
+        </div>
       </div>
       
       <div className=" text-sky-300 dark:text-gray-400 text-center text-xs">
         &copy; {new Date().getFullYear()} CLOUDGRID. All rights reserved.
       </div>
-      
     </footer>
   );
 }
