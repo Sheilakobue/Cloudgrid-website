@@ -1,19 +1,25 @@
 import React from "react";
-import SolutionItem from "../../components/SolutionItem"; // Ensure the path is correct
-import MicrosoftModernWork from "../../../public/MicrosoftModernWork.png";
+import SolutionItem from "../../components/SolutionItem"; // Importing SolutionItem component from the correct path
+import MicrosoftModernWork from "../../../public/MicrosoftModernWork.png"; // Importing image assets
 import CloudSolutions from "../../../public/CloudSolutions.png";
 import Training from "../../../public/Training.png";
 import Networking from "../../../public/Networking.png";
 import HardwareSales from "../../../public/HardwareSales.png";
 import CCTV from "../../../public/CCTV.png";
 
+// SolutionList functional component definition
 export default function SolutionList() {
   return (
+    // Main section container with padding and background styling
     <section className="p-4 bg-white dark:bg-gray-800">
+      {/* Section title */}
       <h1 className="text-center text-4xl font-bold mb-8 text-amber-500">
         Our Solutions
       </h1>
+
+      {/* Grid container for SolutionItems, adjusting layout based on screen size */}
       <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+        {/* SolutionItem components with different props */}
         <SolutionItem
           href="/solutions/microsoft-modern-work"
           imageSrc={MicrosoftModernWork}
