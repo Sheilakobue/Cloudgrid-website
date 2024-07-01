@@ -160,7 +160,7 @@ export default function ContactForm() {
         onClick={onSubmit}
         colorScheme='teal'
         style={{ backgroundColor: 'blue', padding: '10px', width:'130px',
-          borderRadius:'5px',
+          borderRadius:'5px', 
         }}
       >
         Submit
