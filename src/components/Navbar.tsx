@@ -5,6 +5,8 @@ import { useState } from "react";
 import Image from "next/image";
 import ThemeSwitch from "./ThemeSwitch";
 import { IoMdClose, IoMdMenu } from "react-icons/io";
+import logo from '../../public/logo 2.png' 
+import logoa from '../../public/logo2.jpg' 
 
 interface NavItem {
   label: string;
@@ -34,7 +36,7 @@ export default function Navbar(): JSX.Element {
             {/* Logo section */}
             <div className="md:py-5 md:block">
               <Link href="/" className="flex items-center">
-                <Image src="/logo 2.jpg" alt="Logo" width={100} height={50} />
+                <Image src={logo} alt="Logo" width={220}  />
               </Link>
             </div>
             {/* Mobile menu button */}
