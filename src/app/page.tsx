@@ -19,8 +19,8 @@ export default function Home(): JSX.Element {
         
         {/* Text section */}
         <div className="md:mt-0 md:w-1/2">
-          <h3 className="text-lg font-bold text-amber-500 mt-0 md:text-left">Who We Are</h3>
-          <p className="text-xs md:text-sm mb-6 mt-4 md:mt-4 md:text-left">
+          <p className="text-lg font-bold text-amber-500 mt-0 md:text-left text-bold">Who We Are</p>
+          <p className="mb-6 mt-4 md:mt-4 md:text-left">
             Welcome to CloudGrid, a proud Level 1 B-BBEE contributor committed
             to delivering exceptional IT support services tailored to your
             business needs. As a registered Microsoft partner, we specialize in
@@ -43,7 +43,7 @@ export default function Home(): JSX.Element {
               <Image
                 src={Picture4}
                 alt="solutions"
-                width={100}
+                width={200}
                 height={100}
                 className="w-full h-full object-cover"
               />

@@ -42,7 +42,7 @@ export default function Hero(): JSX.Element {
                 animate="visible"
                 variants={variants}
               >
-                <Image src={logo} height={20} width={100} alt="Logo" />
+                <Image src={logo} height={20} width={140} alt="Logo" />
               </motion.div>
             </div>
             {/* Animated text */}
