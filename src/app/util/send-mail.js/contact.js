@@ -241,7 +241,7 @@ export default async function main(data) {
   const { fullName, email, message, companyName, phone } = data
   const info = await transporter.sendMail({
     from: '"Cloud Grid"',
-    to: "ditjoeneo03@gmail.com, neod@sedibelo.com",
+    to: "ditjoeneo03@gmail.com, neod@sedibelo.com, admin@mmsdynamic.co.za",
     subject: `New Inquiry from ${fullName} (${companyName})`,
     text: `You have received a new inquiry from ${fullName} (${companyName}).
 

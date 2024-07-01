@@ -44,38 +44,6 @@ export default function ContactForm() {
     },
   }));
 
-
-  // const onSubmit = async () => {
-  //   setState((prev) => ({
-  //     ...prev,
-  //     isLoading: true,
-  //   }));
-  //   try {
-  //     await sendContactForm(values);
-  //     setTouched({});
-  //     setState(initState);
-  //     toast({
-  //       title: "Message sent.",
-  //       status: "success",
-  //       duration: 2000,
-  //       position: "top",
-  //     });
-  //   } catch (error) {
-  //     setState((prev) => ({
-  //       ...prev,
-  //       isLoading: false,
-  //       error: error.message,
-  //     }));
-  //     toast({
-  //       title: "Failed to send message.",
-  //       description: error.message,
-  //       status: "error",
-  //       duration: 2000,
-  //       position: "top",
-  //     });
-  //   }
-  // };
-
   const onSubmit = async () => {
     try {
       const res = await PostMethod('/api/mail', state.values)
