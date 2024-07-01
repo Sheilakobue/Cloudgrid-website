@@ -18,19 +18,19 @@ export default function ContactUs() {
         <h1 className="text-4xl font-bold mb-0 text-amber-500">Contacts Us</h1>
         <hr className="w-6 h-1 mx-auto my-4 bg-sky-300 border-0 rounded" />
         <h2 className="text-2xl font-bold mb-8 text-sky-300 dark:text-sky-300">
-          Let's Chat.
+          {"Let's Chat."}
         </h2>
       </div>
 
       {/* Contact form and information section */}
       <div className="flex flex-col space-y-5 items-stretch justify-center align-top md:flex-row md:text-left p-4 md:space-y-0 md:space-x-10 w-full max-w-screen-lg mx-auto">
         {/* Contact form */}
-        <div className="md:w-1/2 mx-auto text-sm max-w-2xl p-2 text-blue-200 bg-blue-950 bg-opacity-50 rounded-lg shadow-md">
+        <div style={{ width: '100%'}} className="mx-auto text-sm max-w-2xl p-2 text-blue-200 bg-blue-950 bg-opacity-50 rounded-lg shadow-md">
           <ContactForm />
         </div>
 
         {/* Contact information */}
-        <div className="md:w-1/2 bg-blue-950 bg-opacity-50 rounded-lg shadow-md p-4">
+        <div style={{ width: '100%'}} className="bg-blue-950 bg-opacity-50 rounded-lg shadow-md p-4">
           {/* Personalized quote */}
           <h5 className="text-center text-lg font-bold mb-8 text-amber-500 dark:text-sky-300">
             Contact us for a personalized quote

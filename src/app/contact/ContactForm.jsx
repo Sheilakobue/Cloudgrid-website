@@ -12,7 +12,8 @@ import {
   useToast,
   Text, // Make sure to import Text here
 } from "@chakra-ui/react";
-import { sendContactForm } from "../../../lib/api"; // Ensure this path is correct
+// import { sendContactForm } from "../../../lib/api"; // Ensure this path is correct
+import PostMethod from '../util/post-method'
 
 const initValues = {
   fullName: "",
@@ -35,94 +36,112 @@ export default function ContactForm() {
     setTouched((prev) => ({ ...prev, [target.name]: true }));
 
   const handleChange = ({ target }) =>
-    setState((prev) => ({
-      ...prev,
-      values: {
-        ...prev.values,
-        [target.name]: target.value,
-      },
-    }));
+  setState((prev) => ({
+    ...prev,
+    values: {
+      ...prev.values,
+      [target.name]: target.value,
+    },
+  }));
+
+
+  // const onSubmit = async () => {
+  //   setState((prev) => ({
+  //     ...prev,
+  //     isLoading: true,
+  //   }));
+  //   try {
+  //     await sendContactForm(values);
+  //     setTouched({});
+  //     setState(initState);
+  //     toast({
+  //       title: "Message sent.",
+  //       status: "success",
+  //       duration: 2000,
+  //       position: "top",
+  //     });
+  //   } catch (error) {
+  //     setState((prev) => ({
+  //       ...prev,
+  //       isLoading: false,
+  //       error: error.message,
+  //     }));
+  //     toast({
+  //       title: "Failed to send message.",
+  //       description: error.message,
+  //       status: "error",
+  //       duration: 2000,
+  //       position: "top",
+  //     });
+  //   }
+  // };
 
   const onSubmit = async () => {
-    setState((prev) => ({
-      ...prev,
-      isLoading: true,
-    }));
     try {
-      await sendContactForm(values);
-      setTouched({});
-      setState(initState);
-      toast({
-        title: "Message sent.",
-        status: "success",
-        duration: 2000,
-        position: "top",
-      });
+      const res = await PostMethod('/api/mail', state.values)
+      console.log(res)
     } catch (error) {
-      setState((prev) => ({
-        ...prev,
-        isLoading: false,
-        error: error.message,
-      }));
-      toast({
-        title: "Failed to send message.",
-        description: error.message,
-        status: "error",
-        duration: 2000,
-        position: "top",
-      });
+      console.log(error)
     }
-  };
-
+  }
   return (
-    <Container maxW="450px" mt={12}>
+    <Container mt={12}>
       <FormControl isRequired isInvalid={touched.fullName && !values.fullName} mb={10}>
-        <FormLabel>Full Name</FormLabel>
         <Input
+          placeholder='full Name'
           type="text"
           name="fullName"
-          minLength={5}
-          maxLength={150}
           errorBorderColor="red.300"
           value={values.fullName}
           onChange={handleChange}
           onBlur={onBlur}
+          padding={15}
+          borderRadius={5}
+          fontSize={15}
+          color={'gray'}
+          width='100%'
         />
         <FormErrorMessage>Required</FormErrorMessage>
       </FormControl>
 
       <FormControl isRequired isInvalid={touched.companyName && !values.companyName} mb={10}>
-        <FormLabel>Company Name</FormLabel>
         <Input
+          placeholder="Company Name"
           type="text"
-          minLength={5}
-          maxLength={150}
           name="companyName"
           errorBorderColor="red.300"
           value={values.companyName}
           onChange={handleChange}
           onBlur={onBlur}
+          padding={15}
+          borderRadius={5}
+          fontSize={15}
+          color={'gray'}
+          width='100%'
         />
         <FormErrorMessage>Required</FormErrorMessage>
       </FormControl>
 
       <FormControl isRequired isInvalid={touched.email && !values.email} mb={10}>
-        <FormLabel>Email</FormLabel>
+
         <Input
           type="email"
+          placeholder="Email"
           name="email"
-          minLength={5}
-          maxLength={150}
           value={values.email}
           errorBorderColor="red.300"
           onChange={handleChange}
           onBlur={onBlur}
+          padding={15}
+          borderRadius={5}
+          fontSize={15}
+          color={'gray'}
+          width='100%'
         />
         <FormErrorMessage>Required</FormErrorMessage>
       </FormControl>
 
       <FormControl isRequired isInvalid={touched.phone && !values.phone} mb={10}>
-        <FormLabel>Phone</FormLabel>
         <Input
           type="tel"
           name="phone"
@@ -130,21 +149,30 @@ export default function ContactForm() {
           errorBorderColor="red.300"
           onChange={handleChange}
           onBlur={onBlur}
+          placeholder="Phone"
+          padding={15}
+          borderRadius={5}
+          fontSize={15}
+          color={'gray'}
+          width='100%'
         />
         <FormErrorMessage>Required</FormErrorMessage>
       </FormControl>
 
       <FormControl isRequired isInvalid={touched.message && !values.message} mb={10}>
-        <FormLabel>Message</FormLabel>
         <Textarea
           name="message"
-          minLength={10}
-          maxLength={500}
           rows={4}
           value={values.message}
           errorBorderColor="red.300"
           onChange={handleChange}
           onBlur={onBlur}
+          placeholder="Message"
+          padding={15}
+          borderRadius={5}
+          fontSize={15}
+          color={'gray'}
+          width='100%'
         />
         <FormErrorMessage>Required</FormErrorMessage>
       </FormControl>
@@ -156,20 +184,17 @@ export default function ContactForm() {
       )}
 
       <Button
-        variant="outline"
-        colorScheme="blue"
+        // variant="outline"
         isLoading={isLoading}
-        disabled={
-          !values.fullName ||
-          !values.companyName ||
-          !values.email ||
-          !values.phone ||
-          !values.message
-        }
         onClick={onSubmit}
+        colorScheme='teal'
+        style={{ backgroundColor: 'blue', padding: '10px', width:'130px',
+          borderRadius:'5px',
+        }}
       >
         Submit
       </Button>
+      
     </Container>
   );
 }

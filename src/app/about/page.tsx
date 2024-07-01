@@ -36,7 +36,7 @@ export default function About(): JSX.Element {
               transparency and affordability, providing competitive pricing,
               accurate feedback, and detailed reports. Our expertise includes
               thorough software audits and preventative maintenance, ensuring
-              optimal system performance. With a proven track record, we're a
+              optimal system performance. With a proven track record, {"we're"} a
               trusted partner dedicated to helping your business thrive.
             </p>
           </div>   
