@@ -4,7 +4,7 @@ import Image from "next/image"; // Importing Image component from Next.js for op
 
 // SolutionItem component definition, receives props as destructured parameters
 const SolutionItem = ({ href, imageSrc, imageAlt, title, description }) => (
-  <div className="relative flex flex-col items-center text-center bg-blue-100 border-0 bg-opacity-50 dark:bg-gray-900 p-4 rounded-lg shadow-md">
+  <div className="relative flex flex-col items-center text-center bg-blue-100 border-0 bg-opacity-50 dark:bg-gray-900 p-4 rounded-lg shadow-md p-8">
     
     {/* Container for the image */}
     <div className="relative mb-4">
@@ -20,7 +20,7 @@ const SolutionItem = ({ href, imageSrc, imageAlt, title, description }) => (
     </div>
 
     {/* Container for the title */}
-    <span className="absolute bottom-0 bg-blue950 bg-opacity-50 text-amber-300 font-bold text-lg p-2 rounded-lg">
+    <span className="absolute bottom-5 bg-blue950 bg-opacity-50 text-amber-300 font-bold text-lg p-2 rounded-lg">
       {title} {/* Title text */}
     </span>
 
