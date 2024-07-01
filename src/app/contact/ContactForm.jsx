@@ -6,14 +6,13 @@ import {
   Container,
   FormControl,
   FormErrorMessage,
-  FormLabel,
   Input,
   Textarea,
   useToast,
-  Text, // Make sure to import Text here
+  Text,
 } from "@chakra-ui/react";
-// import { sendContactForm } from "../../../lib/api"; // Ensure this path is correct
 import PostMethod from '../util/post-method'
+import { useRouter } from "next/navigation";
 
 const initValues = {
   fullName: "",
@@ -29,6 +28,7 @@ export default function ContactForm() {
   const toast = useToast();
   const [state, setState] = useState(initState);
   const [touched, setTouched] = useState({});
+  const router = useRouter()
 
   const { values, isLoading, error } = state;
 
@@ -47,7 +47,10 @@ export default function ContactForm() {
   const onSubmit = async () => {
     try {
       const res = await PostMethod('/api/mail', state.values)
-      console.log(res)
+      if(res.message == 'success'){
+        console.log('hello world')
+        router.push('/')
+      }
     } catch (error) {
       console.log(error)
     }

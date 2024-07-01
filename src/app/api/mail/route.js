@@ -7,7 +7,6 @@ export async function POST(request){
   const res = main(data)
 
   return NextResponse.json({
-    message: 'success',
-    data
+    message: 'success'
   })
 }
