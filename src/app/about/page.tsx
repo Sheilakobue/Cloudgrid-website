@@ -13,8 +13,8 @@ export default function About(): JSX.Element {
       <div className="my-5 pb-5 md:pt-2 md:pb-0">
         <p className="text-center text-4xl font-bold mb-4 text-amber-500">
           About Us
-          <hr className="w-6 h-1 mx-auto m-4 bg-sky-300 border-0 rounded" />
         </p>
+          <hr className="w-6 h-1 mx-auto m-4 bg-sky-300 border-0 rounded" />
         <div className="flex flex-col space-y-5 md:text-base text-xs text-blue-950 dark:text-neutral-100 items-stretch justify-center align-top md:flex-row md:text-left md:p-4 p-4 md:space-y-0 md:space-x-10">
           
           {/* First Text Section */}
