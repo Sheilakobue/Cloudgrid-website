@@ -20,20 +20,19 @@ const SolutionItem = ({ href, imageSrc, imageAlt, title, description }) => (
     </div>
 
     {/* Container for the title */}
-    <span className="absolute bottom-5 bg-blue950 bg-opacity-50 text-amber-300 font-bold text-lg p-2 rounded-lg">
-      {title} {/* Title text */}
-    </span>
 
-    {/* Container for the description */}
     <p className="text-sm text-blue-950 dark:text-gray-300 mt-2 mb-10">
-      {description}{" "} {/* Description text */}
+      {description}{" "} 
       <Link href={href} passHref>
-        {/* Link component for client-side navigation */}
         <span className="text-blue-800 hover:text-amber-300 text-xs">
-          Learn More... {/* Link text */}
+          Learn More... 
         </span>
       </Link>
     </p>
+
+    <span className="bg-blue950 text-white font-bold text-lg p-2 rounded-lg cursor-pointer hover:text-orange-200">
+      {title} 
+    </span>
   </div>
 );
 

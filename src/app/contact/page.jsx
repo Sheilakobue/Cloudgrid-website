@@ -35,14 +35,14 @@ export default function ContactUs() {
           <p className="text-center text-lg font-bold mt-8 text-amber-500 ">
             Contact us for a personalized quote
           </p>
-          <p className="text-xs text-blue-200">
+          <p className="text-sm text-blue-200">
             Every business is unique, and your rate will depend on the specific needs of your business. To receive a personalized quote, please complete the form with your business details, and our team will get back to you promptly with a tailored rate.
           </p>
           {/* Book an appointment */}
           <p className="text-center text-lg font-bold mt-8 text-amber-500 ">
             Book an appointment
           </p>
-          <p className="text-xs text-blue-200">
+          <p className="text-sm text-blue-200">
             Use the form below to tell us about your business inquiry, and we’ll call you back to schedule an appointment. Please be as detailed as possible, including the industry you need service for and any specific document requests. To help us best serve your inquiry, we recommend describing the issue you’re experiencing before outlining your desired outcome. Alternatively, you may email or call us to make an appointment. Our general response time is one business day.
           </p>
         </div>
