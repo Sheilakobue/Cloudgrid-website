@@ -48,8 +48,7 @@ export default function ContactForm() {
     try {
       const res = await PostMethod('/api/mail', state.values)
       if(res.message == 'success'){
-        console.log('hello world')
-        router.push('/')
+        setState(initState)
       }
     } catch (error) {
       console.log(error)
